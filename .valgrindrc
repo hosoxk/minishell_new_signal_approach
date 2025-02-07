@@ -1,0 +1,4 @@
+--memcheck:leak-check=full
+--show-reachable=yes
+--suppressions=./readline.suppression
+--track-origins=yes
