@@ -6,7 +6,7 @@
 /*   By: kvanden- <kvanden-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 16:32:53 by kvanden-          #+#    #+#             */
-/*   Updated: 2025/02/07 23:29:27 by yde-rudd         ###   ########.fr       */
+/*   Updated: 2025/02/08 01:17:35 by yde-rudd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	do_cmd(t_ast *ast_root, char ***env, int *pids)
 		&& !execute_custom_cmd_after_fork(ast_root->args, env))
 	{
 		execute_build_in_cmd(ast_root->args, *env);
-		perror(ast_root->args[0]);
+	//	perror(ast_root->args[0]);
 		exit_clean(ast_root, *env, -1);
 		return ;
 	}
@@ -116,6 +116,8 @@ int	get_exit_code(pid_t *pids)
 	status = get_exit_status();
 	len = get_len_pids(pids);
 	i = 0;
+	if (pids == NULL)
+		return (status);
 	while (i < len)
 	{
 		if (waitpid(pids[i], &status, 0) == -1)

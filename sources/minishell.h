@@ -6,7 +6,7 @@
 /*   By: yde-rudd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 23:34:26 by yde-rudd          #+#    #+#             */
-/*   Updated: 2025/02/07 23:53:25 by yde-rudd         ###   ########.fr       */
+/*   Updated: 2025/02/08 01:14:10 by yde-rudd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,6 +182,9 @@ bool			setup_signals(void);
 void			restore_terminal_settings(const struct termios *orig_termios);
 void			save_terminal_settings(struct termios *orig_termios);
 void			process_flags(void);
+void			handle_sigint_in_cmd(int sig);
+void			disable_signal_chars(void);
+void			handle_sigint_here(int sig);
 
 // *** UTILS ***
 void			exit_status(int exit_status);

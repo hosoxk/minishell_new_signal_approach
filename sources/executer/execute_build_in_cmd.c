@@ -6,7 +6,7 @@
 /*   By: kvanden- <kvanden-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 13:00:45 by kvanden-          #+#    #+#             */
-/*   Updated: 2025/02/06 18:22:09 by yde-rudd         ###   ########.fr       */
+/*   Updated: 2025/02/08 00:03:20 by yde-rudd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	execute_build_in_cmd(char **argv, char **env)
 	if (!name)
 	{
 		ft_putendl_fd("pipex: command not found: ", STDERR_FILENO);
-		exit(127);
+		set_exit_status(127);
 	}
 	path = get_path(name, env);
 	signal(SIGQUIT, SIG_DFL);
@@ -96,6 +96,7 @@ void	execute_build_in_cmd(char **argv, char **env)
 	{
 		execve(name, argv, env);
 		ft_putstr_fd("minishell: command not found: ", STDERR_FILENO);
+		set_exit_status(127);
 		ft_putendl_fd(name, STDERR_FILENO);
 	}
 }

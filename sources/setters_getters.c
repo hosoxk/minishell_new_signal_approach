@@ -6,7 +6,7 @@
 /*   By: yde-rudd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 22:40:21 by yde-rudd          #+#    #+#             */
-/*   Updated: 2025/02/07 23:52:56 by yde-rudd         ###   ########.fr       */
+/*   Updated: 2025/02/08 00:42:26 by yde-rudd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ unsigned int	get_flag(unsigned int flag)
 
 void	set_flag(unsigned int flag)
 {
+	printf("Setting flag: 0x%X\n", flag);
 	g_flags |= flag;
 }
 

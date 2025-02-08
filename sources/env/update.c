@@ -6,7 +6,7 @@
 /*   By: kvanden- <kvanden-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:29:34 by kvanden-          #+#    #+#             */
-/*   Updated: 2025/02/07 23:33:42 by yde-rudd         ###   ########.fr       */
+/*   Updated: 2025/02/08 01:01:50 by yde-rudd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,21 +62,3 @@ bool	update_env(char *name, char *value, char ***env)
 	(*env)[index] = new_env;
 	return (true);
 }
-
-/*
-int	get_exit_status2(char **env)
-{
-	return ((int)*getenv_stript("?", env));
-}
-
-bool	set_exit_status2(int exit_status, char **env)
-{
-	int		index;
-
-	index = get_location("?", &env);
-	if (index < 0)
-		return (false);
-	env[index][2] = exit_status;
-	return (true);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: kvanden- <kvanden-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:30:17 by kvanden-          #+#    #+#             */
-/*   Updated: 2025/02/07 23:45:10 by yde-rudd         ###   ########.fr       */
+/*   Updated: 2025/02/08 01:12:53 by yde-rudd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	cleanup_heredoc(int *p_fd, int fd_in, int fd_out)
  */
 static void	setup(int *p_fd, t_ast *ast_root, int *fd_in, int *fd_out)
 {
-//	signal(SIGINT, handle_sigint_here);
+	signal(SIGINT, handle_sigint_here);
 	close(p_fd[0]);
 	*fd_in = dup(STDIN_FILENO);
 	*fd_out = dup(STDOUT_FILENO);
@@ -59,7 +59,7 @@ static void	setup(int *p_fd, t_ast *ast_root, int *fd_in, int *fd_out)
 static void	sigint_handler(int sig)
 {
 	(void)sig;
-//	disable_signal_chars();
+	disable_signal_chars();
 }
 
 /*
